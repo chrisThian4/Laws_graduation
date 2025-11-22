@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lawrencia • KNUST Class of 2025</title>
+<style>
+  body {margin:0; height:100vh; overflow:hidden;
+        background:linear-gradient(135deg, #0b121e, #1e2a44);
+        font-family:'Georgia', serif; color:#f5f0e1;
+        display:flex; align-items:center; justify-content:center; position:relative;}
+
+  .scene {text-align:center; z-index:10;}
+
+  .name {font-size:7.8rem; font-weight:300; letter-spacing:15px;
+         background:linear-gradient(90deg, #d4af37, #ffd700, #f1c40f, #d4af37);
+         -webkit-background-clip:text; background-clip:text; color:transparent;
+         text-shadow:0 8px 40px rgba(212,175,55,0.5); margin:0;}
+
+  .congrats {font-size:3.8rem; margin:20px 0; letter-spacing:6px; color:#f5f0e1;}
+
+  .details {font-size:1.9rem; line-height:1.8; background:rgba(245,240,225,0.1);
+            padding:25px 50px; border-radius:18px; backdrop-filter:blur(12px);}
+
+  .photo {width:290px; height:290px; border-radius:50%; object-fit:cover;
+          border:14px solid #d4af37; box-shadow:0 25px 70px rgba(0,0,0,0.7);
+          margin:35px 0;}
+
+  /* Animated graduation caps */
+  .cap {position:absolute; font-size:110px; animation:flyCap 18s linear infinite;
+        pointer-events:none; filter:drop-shadow(0 10px 20px #000);}
+
+  /* Animated balloons */
+  .balloon {position:absolute; font-size:90px; animation:floatUp 20s linear infinite;
+            pointer-events:none; filter:drop-shadow(0 8px 15px #000);}
+
+  /* Golden ribbons */
+  .ribbon {position:absolute; width:8px; height:250px; background:linear-gradient(transparent, #d4af37, transparent);
+           border-radius:4px; animation:ribbonFlow 15s linear infinite; pointer-events:none;}
+
+  @keyframes flyCap   {0%{transform:translateY(110vh) translateX(-150px) rotate(0deg)}
+                       100%{transform:translateY(-200px) translateX(110vw) rotate(1080deg)}}
+  @keyframes floatUp  {0%{transform:translateY(110vh) scale(0.6) rotate(-15deg)}
+                       100%{transform:translateY(-200px) scale(1.2) rotate(15deg)}}
+  @keyframes ribbonFlow {0%{transform:translateY(110vh) rotate(0deg)}
+                         100%{transform:translateY(-300px) rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<div class="scene">
+  <h1 class="name">LAWRENCIA</h1>
+  <div class="congrats">Congratulations</div>
+
+  <div class="details">
+    Bachelor of Science in<br>
+    Disability and Rehabilitation Studies<br>
+    Kwame Nkrumah University of Science and Technology<br>
+    Class of 2025
+  </div>
+
+  <img src="lawrencia.jpg" class="photo" onerror="this.style.display='none'">
+
+  <div style="font-size:2.4rem; margin-top:50px; font-style:italic; color:#d4af37;">
+    Queen of the Class of 2025
+  </div>
+</div>
+
+<!-- Animated graduation caps -->
+<div class="cap" style="left:2%; animation-delay:0s;">🎓</div>
+<div class="cap" style="left:28%; animation-delay:5s;">🎓</div>
+<div class="cap" style="left:52%; animation-delay:10s;">🎓</div>
+<div class="cap" style="right:8%; animation-delay:3s;">🎓</div>
+
+<!-- Animated balloons -->
+<div class="balloon" style="left:12%; animation-delay:1s;">🎈</div>
+<div class="balloon" style="left:35%; animation-delay:4s;">🎈</div>
+<div class="balloon" style="left:68%; animation-delay:7s;">🎈</div>
+<div class="balloon" style="right:18%; animation-delay:2s;">🎈</div>
+
+<!-- Golden ribbons -->
+<div class="ribbon" style="left:20%; animation-delay:1s;"></div>
+<div class="ribbon" style="left:50%; animation-delay:6s;"></div>
+<div class="ribbon" style="right:25%; animation-delay:9s;"></div>
+
+<!-- Soft golden sparkles -->
+<script>
+setInterval(()=>{
+  let s = document.createElement("div");
+  s.style.cssText = `position:absolute; width:6px; height:6px; background:#d4af37;
+                     border-radius:50%; left:${Math.random()*100}vw; top:${Math.random()*40}vh;
+                     box-shadow:0 0 12px #ffd700; animation:sparkle 4s forwards;`;
+  document.body.appendChild(s);
+  setTimeout(()=>s.remove(),4000);
+},250);
+
+document.head.insertAdjacentHTML("beforeend",`<style>
+@keyframes sparkle{0%{opacity:0; transform:scale(0)} 30%{opacity:1} 100%{opacity:0; transform:scale(1.5) translateY(-150px)}}
+</style>`);
+</script>
+
+</body>
+</html>
